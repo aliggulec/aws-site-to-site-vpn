@@ -117,12 +117,12 @@ vpc_configs = {
   production = {
     vpc_name           = "your-production-vpc-name"  # Replace with actual VPC name tag
     subnet_name_filter = "*production-private*"     # Replace with actual subnet filter
-    remote_cidr        = "172.31.0.0/16"           # Replace with actual VPC CIDR
+    remote_cidr        = "10.0.0.5/16"             # Aws VPC CIDR
   }
   alpha = {
     vpc_name           = "your-alpha-vpc-name"       # Replace with actual VPC name tag
     subnet_name_filter = "*alpha-private*"          # Replace with actual subnet filter  
-    remote_cidr        = "172.30.0.0/16"           # Replace with actual VPC CIDR
+    remote_cidr        = "10.0.0.5/16"             # Aws VPC CIDR
   }
 }
 ```
@@ -203,8 +203,7 @@ Edit `variables.tf` and add to `vpc_configs`:
 staging = {
   vpc_name           = "your-staging-vpc-name"   # Actual staging VPC name
   subnet_name_filter = "*staging-private*"      # Staging subnet filter
-  remote_cidr        = "172.29.0.0/16"         # Staging VPC CIDR
-}
+  remote_cidr        = "10.0.0.5/16"           # Aws VPC CIDR
 ```
 
 **Note**: When adding new environments, ensure corresponding routes exist in vendor static_routes configuration.
